@@ -5,9 +5,22 @@ const add = document.querySelector('#add');
 const minus = document.querySelector('#minus');
 const number = document.querySelector('span');
 
-const countModifier = (state = 0) => {
-  return count;
-}
+const countModifier = (count = 0, action) => {
+  if(action.type === "ADD"){
+    return count +1;
+  }else if (action.type === "MINUS"){
+      return count -1;
+  }else {
+    return;
+  }
+};
 
 const countStore = createStore(countModifier);
-console.log(countStore.getState());
+
+countStore.dispatch({type: "ADD" });
+countStore.dispatch({type: "ADD" });
+countStore.dispatch({type: "ADD" });
+countStore.dispatch({type: "ADD" });
+countStore.dispatch({type: "ADD" });
+countStore.dispatch({type: "ADD" });
+countStore.dispatch({type: "ADD" });
