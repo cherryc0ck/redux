@@ -37,6 +37,9 @@ const store = createStore(reducer);
 
 store.subscribe(()=> console.log(store.getState()));
 
+const addToDo = (text) => {
+  store.dispatch({ type: ADD_TODO, text: toDo });
+}
 
 const dispatchAddToDo = text =>{
   store.dispatch(addToDo(text));
