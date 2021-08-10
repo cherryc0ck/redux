@@ -11,9 +11,10 @@ const addToDo = (text) => {
 }
 
 const deleteToDo = id => {
+  console.log("deleteToDo");
   return {
     type: DELETE,
-    id
+    id : id
   }
 }
 
@@ -22,6 +23,7 @@ const reducer = (state= [], action)=> {
     case ADD:
       return [{ text: action.text, id: Date.now() }, ...state];
     case DELETE:
+      console.log("delete");
       return state.filter(toDo=> toDo.id !== action.id);
     default:
       return state;
